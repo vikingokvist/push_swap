@@ -12,19 +12,17 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_push_swap(t_list **stack_a, t_list **stack_b)
+int	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*bin;
-	long	stack_len;
+	long	s_len;
 
-	bin = *stack_b;
-	stack_len = ft_lstlen(stack_a);
-	ft_lstindex(stack_a);
-	if (stack_len == 2)
-		ft_sa(stack_a);
-	else if (stack_len == 3)
-		ft_swap_three(stack_a);
-	else if (stack_len == 5)
-		ft_swap_five(stack_a, stack_b);
+	s_len = stack_len(stack_a);
+	stack_index(stack_a);
+	if (s_len == 2)
+		sa(stack_a);
+	else if (s_len == 3)
+		swap_three(stack_a);
+	else if (s_len == 5)
+		swap_five(stack_a, stack_b);
 	return (0);
 }

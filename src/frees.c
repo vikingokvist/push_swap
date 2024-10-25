@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_lstfree(t_list **stack_x)
+void	stack_free(t_list **stack_x)
 {
 	t_list	*temp;
 
@@ -25,7 +25,7 @@ void	ft_lstfree(t_list **stack_x)
 	free(stack_x);
 }
 
-void	ft_free_all(char **res, size_t i)
+void	free_all(char **res, size_t i)
 {
 	while (i > 0)
 	{

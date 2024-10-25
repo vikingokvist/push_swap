@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static void	ft_swap(t_list **stack_x)
+static void	swap(t_list **stack_x)
 {
 	t_list	*first;
 	t_list	*second;
@@ -25,24 +25,24 @@ static void	ft_swap(t_list **stack_x)
 	second->value = temp;
 }
 
-void	ft_sa(t_list **stack_a)
+void	sa(t_list **stack_a)
 {
 	if ((*stack_a)->next && stack_a && *stack_a)
-		ft_swap(stack_a);
+		swap(stack_a);
 }
 
-void	ft_sb(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
 	if ((*stack_b)->next && stack_b && *stack_b)
-		ft_swap(stack_b);
+		swap(stack_b);
 }
 
-void	ft_ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
 	if ((*stack_a)->next && stack_a && *stack_a
 		&& (*stack_b)->next && stack_b && *stack_b)
 	{
-		ft_sa(stack_a);
-		ft_sb(stack_b);
+		sa(stack_a);
+		sb(stack_b);
 	}
 }

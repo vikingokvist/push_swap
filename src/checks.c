@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_check_dupe(t_list **stack_a)
+int	check_dupe(t_list **stack_a)
 {
 	t_list	*current;
 	t_list	*compare;
@@ -32,7 +32,7 @@ int	ft_check_dupe(t_list **stack_a)
 	return (0);
 }
 
-int	ft_check_digit(char **temp, int j)
+int	check_digit(char **temp, int j)
 {
 	int	k;
 
@@ -50,7 +50,7 @@ int	ft_check_digit(char **temp, int j)
 	return (0);
 }
 
-int	ft_check_order(t_list **stack_a)
+int	check_order(t_list **stack_a)
 {
 	t_list	*current;
 	int		last_value;

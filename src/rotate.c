@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static void	ft_rotate(t_list **stack_x)
+static void	rotate(t_list **stack_x)
 {
 	t_list	*first;
 	t_list	*last;
@@ -28,20 +28,20 @@ static void	ft_rotate(t_list **stack_x)
 	first->next = NULL;
 }
 
-void	ft_ra(t_list **stack_a)
+void	ra(t_list **stack_a)
 {
 	if (*stack_a != NULL && (*stack_a)->next != NULL)
-		ft_rotate(stack_a);
+		rotate(stack_a);
 }
 
-void	ft_rb(t_list **stack_b)
+void	rb(t_list **stack_b)
 {
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
-		ft_rotate(stack_b);
+		rotate(stack_b);
 }
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b)
 {
-	ft_ra(stack_a);
-	ft_rb(stack_b);
+	ra(stack_a);
+	rb(stack_b);
 }

@@ -21,16 +21,16 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	res = malloc((ft_array_len(s, c) + 1) * sizeof(char *));
+	res = malloc((array_len(s, c) + 1) * sizeof(char *));
 	if (res == NULL)
-		return (ft_free_all(res, i), NULL);
-	while (i < ft_array_len(s, c))
+		return (free_all(res, i), NULL);
+	while (i < array_len(s, c))
 	{
 		while (s[j] == c)
 			j++;
-		res[i] = malloc((ft_word_len(s, c, j) + 1) * sizeof(char));
+		res[i] = malloc((word_len(s, c, j) + 1) * sizeof(char));
 		if (!res[i])
-			return (ft_free_all(res, i), NULL);
+			return (free_all(res, i), NULL);
 		k = 0;
 		while (s[j] && s[j] != c)
 			res[i][k++] = s[j++];

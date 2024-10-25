@@ -12,17 +12,10 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_swap_five(t_list **stack_a, t_list **stack_b)
+void	swap_five(t_list **stack_a, t_list **stack_b)
 {
-	int	moves;
-
-	moves = 0;
-	ft_pb(stack_a, stack_b);
-	ft_pb(stack_a, stack_b);
-	ft_swap_three(stack_a);
-	while (true)
-	{
-		
-	}
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	swap_three(stack_a);
 
 }

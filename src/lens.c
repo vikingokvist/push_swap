@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t	ft_word_len(char const *s, char c, size_t start)
+size_t	word_len(char const *s, char c, size_t start)
 {
 	size_t	len;
 
@@ -32,7 +32,7 @@ size_t	ft_word_len(char const *s, char c, size_t start)
 	return (len);
 }
 
-size_t	ft_array_len(char const *s, char c)
+size_t	array_len(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -60,7 +60,7 @@ size_t	ft_array_len(char const *s, char c)
 	return (len);
 }
 
-size_t	ft_lstlen(t_list **stack_x)
+size_t	stack_len(t_list **stack_x)
 {
 	size_t	len;
 	t_list	*current;

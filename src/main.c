@@ -27,16 +27,16 @@ int	main(int argc, char **argv)
 		return (1);
 	*stack_a = NULL;
 	*stack_b = NULL;
-	if (ft_init_stack(stack_a, argc, argv) == 1)
+	if (init_stack(stack_a, argc, argv) == 1)
 	{
-		ft_lstfree(stack_a);
-		ft_lstfree(stack_b);
+		stack_free(stack_a);
+		stack_free(stack_b);
 		ft_printf("Error\n");
 		return (1);
 	}
-	if (ft_check_order(stack_a) == 1)
-		return (ft_lstfree(stack_a), ft_lstfree(stack_b), 1);
-	ft_push_swap(stack_a, stack_b);
+	if (check_order(stack_a) == 1)
+		return (stack_free(stack_a), stack_free(stack_b), 1);
+	push_swap(stack_a, stack_b);
 	ft_lstprint(stack_a, stack_b);
-	return (ft_lstfree(stack_a), ft_lstfree(stack_b), 0);
+	return (stack_free(stack_a), stack_free(stack_b), 0);
 }

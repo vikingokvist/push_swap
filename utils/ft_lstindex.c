@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_lstindex(t_list **stack_a)
+void	stack_index(t_list **stack_a)
 {
 	t_list	*current;
 	t_list	*stack_dupe;

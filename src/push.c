@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static void	ft_push(t_list **stack_src, t_list **stack_dest)
+static void	push(t_list **stack_src, t_list **stack_dest)
 {
 	t_list	*new_node;
 	t_list	*temp;
@@ -28,14 +28,14 @@ static void	ft_push(t_list **stack_src, t_list **stack_dest)
 	free(temp);
 }
 
-void	ft_pa(t_list **stack_b, t_list **stack_a)
+void	pa(t_list **stack_b, t_list **stack_a)
 {
 	if (stack_b != NULL && *stack_b != NULL)
-		ft_push(stack_b, stack_a);
+		push(stack_b, stack_a);
 }
 
-void	ft_pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (stack_a != NULL && *stack_a != NULL)
-		ft_push(stack_a, stack_b);
+		push(stack_a, stack_b);
 }
