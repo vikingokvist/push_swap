@@ -40,14 +40,3 @@ int	main(int argc, char **argv)
 	ft_lstprint(stack_a, stack_b);
 	return (ft_lstfree(stack_a), ft_lstfree(stack_b), 0);
 }
-	// sa(stack_a);
-	// sb(stack_a);
-	// ss(stack_a, stack_b);
-	// pa(stack_b, stack_a);
-	// pb(stack_a, stack_b);
-	// ra(stack_a);
-	// rb(stack_b);
-	// rr(stack_a, stack_b);
-	// rra(stack_a);
-	// rrb(stack_b);
-	// rrr(stack_a, stack_b);

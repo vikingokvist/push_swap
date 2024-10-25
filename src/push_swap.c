@@ -21,7 +21,7 @@ int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 	stack_len = ft_lstlen(stack_a);
 	ft_lstindex(stack_a);
 	if (stack_len == 2)
-		ft_pa(stack_b, stack_a);
+		ft_sa(stack_a);
 	else if (stack_len == 3)
 		ft_swap_three(stack_a);
 	else if (stack_len == 5)
