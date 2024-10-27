@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_b = malloc(sizeof(t_list *));
 	if (!stack_b)
-		return (1);
+		return (free(stack_a), 1);
 	*stack_a = NULL;
 	*stack_b = NULL;
 	if (init_stack(stack_a, argc, argv) == 1)
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	}
 	if (check_order(stack_a) == 1)
 		return (stack_free(stack_a), stack_free(stack_b), 1);
+	
 	push_swap(stack_a, stack_b);
 	ft_lstprint(stack_a, stack_b);
 	return (stack_free(stack_a), stack_free(stack_b), 0);

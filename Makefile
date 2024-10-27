@@ -22,7 +22,7 @@ LIB_DIR = libs
 
 SRCS_SRC = src/checks.c src/frees.c src/init_stack.c src/lens.c src/main.c \
 	src/swap.c src/push.c src/rotate.c src/reverse_rotate.c \
-	src/push_swap.c src/swap_three.c src/swap_five.c
+	src/push_swap.c src/swap_three.c src/swap_five.c src/swap_all.c
 
 SRCS_UTILS = utils/ft_atoi.c utils/ft_isdigit.c utils/ft_lstadd_back.c utils/ft_split.c \
 	utils/ft_lstnew.c utils/ft_lstindex.c \

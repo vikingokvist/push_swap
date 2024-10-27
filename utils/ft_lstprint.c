@@ -47,4 +47,5 @@ void	ft_lstprint(t_list **stack_a, t_list **stack_b)
 		}
 	}
 	ft_printf("[Node = NULL]\t[Node = NULL]\n");
+
 }

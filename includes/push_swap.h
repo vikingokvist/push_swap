@@ -28,11 +28,10 @@ int		main(int argc, char *argv[]);
 int		push_swap(t_list **stack_a, t_list **stack_b);
 int		swap_three(t_list **stack_x);
 void	swap_five(t_list **stack_a, t_list **stack_b);
+void    swap_all(t_list **stack_a, t_list **stack_b);
 
 //src/init_stack
 int		init_stack(t_list **stack, int argc, char **argv);
-
-//src/checks.s
 int		check_digit(char **temp, int j);
 int		check_dupe(t_list **stack_a);
 int		check_order(t_list **stack_a);
@@ -41,17 +40,11 @@ int		check_order(t_list **stack_a);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
-
-//src/push.c
 void	pa(t_list **stack_b, t_list **stack_a);
 void	pb(t_list **stack_a, t_list **stack_b);
-
-//src/rotate.c
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
-
-//src/reverse_rotate.c
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);

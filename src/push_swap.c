@@ -14,7 +14,7 @@
 
 int	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	long	s_len;
+	size_t	s_len;
 
 	s_len = stack_len(stack_a);
 	stack_index(stack_a);
@@ -24,5 +24,7 @@ int	push_swap(t_list **stack_a, t_list **stack_b)
 		swap_three(stack_a);
 	else if (s_len == 5)
 		swap_five(stack_a, stack_b);
+	else
+		swap_all(stack_a, stack_b);
 	return (0);
 }
