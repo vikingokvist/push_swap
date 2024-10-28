@@ -28,13 +28,19 @@ static void	swap(t_list **stack_x)
 void	sa(t_list **stack_a)
 {
 	if ((*stack_a)->next && stack_a && *stack_a)
+	{
 		swap(stack_a);
+		ft_printf("sa\n");
+	}
 }
 
 void	sb(t_list **stack_b)
 {
 	if ((*stack_b)->next && stack_b && *stack_b)
+	{
 		swap(stack_b);
+		ft_printf("sb\n");
+	}	
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)
@@ -42,7 +48,8 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	if ((*stack_a)->next && stack_a && *stack_a
 		&& (*stack_b)->next && stack_b && *stack_b)
 	{
-		sa(stack_a);
-		sb(stack_b);
+		swap(stack_a);
+		swap(stack_b);
+		ft_printf("ss\n");
 	}
 }

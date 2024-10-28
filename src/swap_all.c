@@ -17,6 +17,8 @@ static int	get_midpoint(t_list **stack_a)
 	int	len;
 
 	len = stack_len(stack_a);
+	if (len == 0)
+		return (0);
 	return (len / 2);
 }
 
@@ -24,6 +26,8 @@ static t_list	*get_last(t_list **stack_x)
 {
 	t_list	*last;
 
+	if (!*stack_x)
+		return (NULL);
 	last = *stack_x;
 	while (last->next != NULL)
 		last = last->next;
@@ -53,13 +57,13 @@ void	swap_all(t_list **stack_a, t_list **stack_b)
 	{
 		mid_point = get_midpoint(stack_a);
 		last = get_last(stack_a);
-		while (has_elements_below_midpoint(stack_a, mid_point) == 1)
+		while (has_elements_below_midpoint(stack_a, mid_point))
 		{
-			if ((*stack_a)->value < mid_point)
+			while (*stack_a && (*stack_a)->value < mid_point)
 			{
 				pb(stack_a, stack_b);
 			}
-			else if (last->value < mid_point)
+			if (last && last->value < mid_point)
 			{
 				rra(stack_a);
 				pb(stack_a, stack_b);
@@ -68,18 +72,23 @@ void	swap_all(t_list **stack_a, t_list **stack_b)
 			{
 				ra(stack_a);
 			}
+			mid_point = get_midpoint(stack_a);
 			last = get_last(stack_a);
 			ft_lstprint(stack_a, stack_b);
 		}
 	}
-	if ((*stack_a)->value > (*stack_a)->next->value)
+	if (check_order(stack_a) != 1)
 		sa(stack_a);
+	while (*stack_b)
+		pa(stack_b, stack_a);
+	while (check_order(stack_a) != 1)
+		ra(stack_a);
+	ft_lstprint(stack_a, stack_b);
 }
-
 //find mid point,  (mid value)
 //if less than midpoint, pbpbpb
-//if next number isnt less, go to last node and check if its less than 7. 
-//If so rra and pb
+//go to last node and check if its less than 7.
+			    //If so rra and pb
 //if not, ra, ra, ra until theres a value less than 7 and pbpbpb
 //we moved all numbers less than midpoint
 //get new midpoint of stack a

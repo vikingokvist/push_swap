@@ -34,13 +34,19 @@ static void	reverse_rotate(t_list **stack_x)
 void	rra(t_list **stack_a)
 {
 	if (*stack_a != NULL && (*stack_a)->next != NULL)
+	{
 		reverse_rotate(stack_a);
+		ft_printf("rra\n");
+	}	
 }
 
 void	rrb(t_list **stack_b)
 {
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
+	{
 		reverse_rotate(stack_b);
+		ft_printf("rrb\n");
+	}
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
@@ -50,5 +56,6 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	{
 		reverse_rotate(stack_a);
 		reverse_rotate(stack_b);
+		ft_printf("rrr\n");
 	}
 }

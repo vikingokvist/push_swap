@@ -31,17 +31,29 @@ static void	rotate(t_list **stack_x)
 void	ra(t_list **stack_a)
 {
 	if (*stack_a != NULL && (*stack_a)->next != NULL)
+	{
 		rotate(stack_a);
+		ft_printf("ra\n");
+	}
+		
 }
 
 void	rb(t_list **stack_b)
 {
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
+	{
 		rotate(stack_b);
+		ft_printf("rb\n");
+	}
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
 {
-	ra(stack_a);
-	rb(stack_b);
+	if (*stack_a != NULL && (*stack_a)->next != NULL
+		&& *stack_b != NULL && (*stack_b)->next != NULL)
+	{
+		rotate(stack_a);
+		rotate(stack_b);
+		ft_printf("rr\n");
+	}
 }

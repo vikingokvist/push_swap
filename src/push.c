@@ -31,11 +31,17 @@ static void	push(t_list **stack_src, t_list **stack_dest)
 void	pa(t_list **stack_b, t_list **stack_a)
 {
 	if (stack_b != NULL && *stack_b != NULL)
+	{
 		push(stack_b, stack_a);
+		ft_printf("pa\n");
+	}
 }
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (stack_a != NULL && *stack_a != NULL)
+	{
 		push(stack_a, stack_b);
+		ft_printf("pb\n");
+	}
 }
