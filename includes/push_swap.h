@@ -25,8 +25,8 @@ typedef struct s_list
 
 //src/main.c
 int		main(int argc, char *argv[]);
-int		push_swap(t_list **stack_a, t_list **stack_b);
-int		swap_three(t_list **stack_x);
+void	push_swap(t_list **stack_a, t_list **stack_b);
+void	swap_three(t_list **stack_x);
 void	swap_five(t_list **stack_a, t_list **stack_b);
 void	swap_all(t_list **stack_a, t_list **stack_b);
 

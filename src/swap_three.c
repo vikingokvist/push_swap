@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int	swap_three(t_list **stack_x)
+void	swap_three(t_list **stack_x)
 {
 	t_list	*current;
 	int		pos[3];
@@ -27,14 +27,13 @@ int	swap_three(t_list **stack_x)
 		i++;
 	}
 	if (pos[0] > pos[1] && pos[1] < pos[2] && pos[0] < pos[2])
-		return (sa(stack_x), 0);
+		return (sa(stack_x));
 	else if (pos[0] > pos[1] && pos[1] < pos[2] && pos[0] > pos[2])
-		return (ra(stack_x), 0);
+		return (ra(stack_x));
 	else if (pos[0] < pos[1] && pos[1] > pos[2] && pos[0] < pos[2])
-		return (sa(stack_x), ra(stack_x), 0);
+		return (sa(stack_x), ra(stack_x));
 	else if (pos[0] > pos[1] && pos[1] > pos[2] && pos[0] > pos[2])
-		return (sa(stack_x), rra(stack_x), 0);
+		return (sa(stack_x), rra(stack_x));
 	else if (pos[0] < pos[1] && pos[1] > pos[2] && pos[0] > pos[2])
-		return (rra(stack_x), 0);
-	return (1);
+		return (rra(stack_x));
 }

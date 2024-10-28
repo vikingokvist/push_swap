@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int	push_swap(t_list **stack_a, t_list **stack_b)
+void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	size_t	s_len;
 
@@ -26,5 +26,4 @@ int	push_swap(t_list **stack_a, t_list **stack_b)
 		swap_five(stack_a, stack_b);
 	else
 		swap_all(stack_a, stack_b);
-	return (0);
 }
