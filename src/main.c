@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:08:03 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/10/17 15:08:04 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/28 10:15:15 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/28 10:15:17 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 	}
 	if (check_order(stack_a) == 1)
 		return (stack_free(stack_a), stack_free(stack_b), 1);
-	
 	push_swap(stack_a, stack_b);
 	ft_lstprint(stack_a, stack_b);
 	return (stack_free(stack_a), stack_free(stack_b), 0);

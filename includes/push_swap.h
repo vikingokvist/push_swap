@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:06:02 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/10/17 15:06:04 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/28 10:18:35 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/28 10:18:37 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int argc, char *argv[]);
 int		push_swap(t_list **stack_a, t_list **stack_b);
 int		swap_three(t_list **stack_x);
 void	swap_five(t_list **stack_a, t_list **stack_b);
-void    swap_all(t_list **stack_a, t_list **stack_b);
+void	swap_all(t_list **stack_a, t_list **stack_b);
 
 //src/init_stack
 int		init_stack(t_list **stack, int argc, char **argv);
