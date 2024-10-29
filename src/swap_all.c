@@ -12,82 +12,64 @@
 
 #include "../includes/push_swap.h"
 
-static void	push_to_a(t_list **stack_a, t_list **stack_b)
+static void	moves(t_list **stack_b, int count, int r_count)
 {
-	swap_three(stack_a);
-	while (*stack_b)
-	{
-		if ((*stack_a)->value > (*stack_a)->next->value)
-			sa(stack_a);
-		pa(stack_b, stack_a);
-	}
-}
+	int	i;
 
-static t_list	*get_midpoint(t_list **stack_a)
-{
-	t_list	*mid_point;
-	int		s_len;
-	int		i;
-
-	s_len = stack_len(stack_a);
-	mid_point = *stack_a;
 	i = 0;
-	while (mid_point != NULL && i < s_len / 2)
+	if (count < r_count)
 	{
-		mid_point = mid_point->next;
-		i++;
+		while (i < count)
+		{
+			rb(stack_b);
+			i++;
+		}
+			
 	}
-	return (mid_point);
+	else if (count > r_count)
+	{
+		while (i < r_count)
+		{
+			rrb(stack_b);
+			i++;
+		}
+		rrb(stack_b);
+	}
 }
 
-static t_list	*get_last(t_list **stack_x)
+static void	quick_sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
+	t_list	*head;
+	t_list	*tail;
+	t_list	*pivot;
+	int	count;
+	int	r_count;
 
-	last = *stack_x;
-	while (last->next != NULL)
-		last = last->next;
-	return (last);
-}
-
-static int	n_below_midpoint(t_list **stack_a, t_list *mid_point)
-{
-	t_list	*current;
-
-	current = *stack_a;
-	while (current != NULL)
+	head = *stack_b;
+	tail = ft_lstlast(stack_b);
+	pivot = ft_lstmax_index(stack_b);
+	count = 0;
+	r_count = 0;
+	while (head->index != pivot->index)
 	{
-		if (current->index < mid_point->index)
-			return (1);
-		current = current->next;
+		head = head->next;
+		count++;
 	}
-	return (0);
+	while (tail->index != pivot->index)
+	{
+		tail = tail->prev;
+		r_count++;
+	}
+	moves(stack_b, count, r_count);
+	pa(stack_b, stack_a);
 }
 
 void	swap_all(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*mid_point;
-	t_list	*last;
-
-	while (stack_len(stack_a) > 3)
-	{
-		last = get_last(stack_a);
-		mid_point = get_midpoint(stack_a);
-		while (n_below_midpoint(stack_a, mid_point) == 1)
-		{
-			if ((*stack_a)->index < mid_point->index
-				|| last->index < mid_point->index)
-			{
-				if (last->index < mid_point->index)
-					rra(stack_a);
-				pb(stack_a, stack_b);
-				if ((*stack_b) && (*stack_b)->next
-					&& (*stack_b)->value < (*stack_b)->next->value)
-					sb(stack_b);
-			}
-			else
-				ra(stack_a);
-		}
-	}
-	push_to_a(stack_a, stack_b);
+	while (*stack_a)
+		pb(stack_a, stack_b);
+	quick_sort(stack_a, stack_b);
+	ft_lstprint(stack_a, stack_b);
+	quick_sort(stack_a, stack_b);
+	ft_lstprint(stack_a, stack_b);
 }

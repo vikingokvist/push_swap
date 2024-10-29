@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmax_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:15:36 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/10/28 10:15:39 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/29 16:46:36 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/29 16:47:17 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_swap(t_list **stack_a, t_list **stack_b)
+t_list        *ft_lstmax_index(t_list **stack_x)
 {
-	size_t	s_len;
+	t_list	*current;
+	t_list	*max_index;
 
-	s_len = stack_len(stack_a);
-	ft_lstinit_index(stack_a);
-	if (s_len == 2)
-		sa(stack_a);
-	else if (s_len == 3)
-		swap_three(stack_a);
-	else if (s_len == 5)
-		swap_five(stack_a, stack_b);
-	else
-		swap_all(stack_a, stack_b);
+	if (!stack_x || !*stack_x)
+		return (NULL);
+	current = *stack_x;
+	max_index = *stack_x;
+	while (current)
+	{
+		if (current->index > max_index->index)
+			max_index = current;
+		current = current->next;
+	}
+	return (max_index);
 }

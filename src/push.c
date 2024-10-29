@@ -17,11 +17,13 @@ static void	push(t_list **stack_src, t_list **stack_dest)
 	t_list	*new_node;
 	t_list	*temp;
 
-	new_node = malloc(sizeof(t_list));
+	new_node = ft_lstnew((*stack_src)->value);
 	if (!new_node)
 		return ;
-	new_node->value = (*stack_src)->value;
+	new_node->index = (*stack_src)->index;
 	new_node->next = *stack_dest;
+	if (*stack_dest)
+		(*stack_dest)->prev = new_node;
 	*stack_dest = new_node;
 	temp = *stack_src;
 	*stack_src = (*stack_src)->next;

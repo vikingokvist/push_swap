@@ -21,6 +21,7 @@ typedef struct s_list
 	int				value;
 	int				index;
 	struct s_list	*next;
+	struct s_list	*prev;
 }	t_list;
 
 //src/main.c
@@ -63,9 +64,11 @@ void	stack_free(t_list **stack);
 int		ft_isdigit(int c);
 long	ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew(int value);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	stack_index(t_list **stack_a);
+void	ft_lstinit_index(t_list **stack_x);
+t_list	*ft_lstnew(int value);
+t_list	*ft_lstmax_index(t_list **stack_x);
+t_list	*ft_lstlast(t_list **stack_x);
 
 //utils/(DELETE AFTERWARDS)
 void	ft_lstprint(t_list **stack_a, t_list **stack_b);

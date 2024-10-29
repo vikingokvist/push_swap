@@ -37,6 +37,5 @@ int	main(int argc, char **argv)
 	if (check_order(stack_a) == 1)
 		return (stack_free(stack_a), stack_free(stack_b), 1);
 	push_swap(stack_a, stack_b);
-	ft_lstprint(stack_a, stack_b);
 	return (stack_free(stack_a), stack_free(stack_b), 0);
 }
