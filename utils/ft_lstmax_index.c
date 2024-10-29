@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-t_list        *ft_lstmax_index(t_list **stack_x)
+t_list	*ft_lstmax_index(t_list **stack_x)
 {
 	t_list	*current;
 	t_list	*max_index;

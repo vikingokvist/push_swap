@@ -17,14 +17,18 @@ static void	rotate(t_list **stack_x)
 	t_list	*first;
 	t_list	*last;
 
+	if (!stack_x || !*stack_x || !(*stack_x)->next)
+		return ;
 	first = *stack_x;
-	*stack_x = (*stack_x)->next;
 	last = *stack_x;
+	*stack_x = (*stack_x)->next;
+	(*stack_x)->prev = NULL;
 	while (last->next != NULL)
 	{
 		last = last->next;
 	}
 	last->next = first;
+	first->prev = last;
 	first->next = NULL;
 }
 

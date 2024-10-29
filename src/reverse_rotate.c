@@ -14,20 +14,22 @@
 
 static void	reverse_rotate(t_list **stack_x)
 {
-	t_list	*first;
 	t_list	*last;
 	t_list	*last_prev;
 
-	first = *stack_x;
-	last_prev = NULL;
+	if (!stack_x || !*stack_x || !(*stack_x)->next)
+		return ;
 	last = *stack_x;
+	last_prev = NULL;
 	while (last->next != NULL)
 	{
 		last_prev = last;
 		last = last->next;
 	}
 	last_prev->next = NULL;
-	last->next = first;
+	last->next = *stack_x;
+	last->prev = NULL;
+	(*stack_x)->prev = last;
 	*stack_x = last;
 }
 

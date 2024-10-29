@@ -17,14 +17,13 @@ static void	moves(t_list **stack_b, int count, int r_count)
 	int	i;
 
 	i = 0;
-	if (count < r_count)
+	if (count <= r_count)
 	{
 		while (i < count)
 		{
 			rb(stack_b);
 			i++;
 		}
-			
 	}
 	else if (count > r_count)
 	{
@@ -42,8 +41,8 @@ static void	quick_sort(t_list **stack_a, t_list **stack_b)
 	t_list	*head;
 	t_list	*tail;
 	t_list	*pivot;
-	int	count;
-	int	r_count;
+	int		count;
+	int		r_count;
 
 	head = *stack_b;
 	tail = ft_lstlast(stack_b);
@@ -68,8 +67,6 @@ void	swap_all(t_list **stack_a, t_list **stack_b)
 {
 	while (*stack_a)
 		pb(stack_a, stack_b);
-	quick_sort(stack_a, stack_b);
-	ft_lstprint(stack_a, stack_b);
-	quick_sort(stack_a, stack_b);
-	ft_lstprint(stack_a, stack_b);
+	while (*stack_b)
+		quick_sort(stack_a, stack_b);
 }
