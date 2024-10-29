@@ -37,7 +37,7 @@ void	rra(t_list **stack_a)
 	{
 		reverse_rotate(stack_a);
 		ft_printf("rra\n");
-	}	
+	}
 }
 
 void	rrb(t_list **stack_b)

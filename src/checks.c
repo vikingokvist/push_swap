@@ -55,17 +55,16 @@ int	check_order(t_list **stack_a)
 	t_list	*current;
 	int		last_value;
 
-	current = (*stack_a)->next;
-	last_value = (*stack_a)->value;
+	if (!stack_a || !(*stack_a))
+		return (1);
+	current = *stack_a;
+	last_value = current->value;
 	while (current != NULL)
 	{
-		if (last_value < current->value)
-		{
-			last_value = current->value;
-			current = current->next;
-		}
-		else
+		if (last_value > current->value)
 			return (0);
+		last_value = current->value;
+		current = current->next;
 	}
 	return (1);
 }

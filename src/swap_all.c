@@ -12,11 +12,22 @@
 
 #include "../includes/push_swap.h"
 
+static void	push_to_a(t_list **stack_a, t_list **stack_b)
+{
+	swap_three(stack_a);
+	while (*stack_b)
+	{
+		if ((*stack_a)->value > (*stack_a)->next->value)
+			sa(stack_a);
+		pa(stack_b, stack_a);
+	}
+}
+
 static t_list	*get_midpoint(t_list **stack_a)
 {
 	t_list	*mid_point;
-	int	s_len;
-	int	i;
+	int		s_len;
+	int		i;
 
 	s_len = stack_len(stack_a);
 	mid_point = *stack_a;
@@ -64,37 +75,19 @@ void	swap_all(t_list **stack_a, t_list **stack_b)
 		mid_point = get_midpoint(stack_a);
 		while (n_below_midpoint(stack_a, mid_point) == 1)
 		{
-			if ((*stack_a)->index < mid_point->index)
+			if ((*stack_a)->index < mid_point->index
+				|| last->index < mid_point->index)
 			{
-				pb(stack_a, stack_b);	
-				if ((*stack_b) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
-					sb(stack_b);
-			}
-			else if (last->index < mid_point->index)
-			{
-				rra(stack_a);
+				if (last->index < mid_point->index)
+					rra(stack_a);
 				pb(stack_a, stack_b);
-				if ((*stack_b) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
+				if ((*stack_b) && (*stack_b)->next
+					&& (*stack_b)->value < (*stack_b)->next->value)
 					sb(stack_b);
 			}
 			else
 				ra(stack_a);
 		}
 	}
-	swap_three(stack_a);
-	while (*stack_b)
-		pa(stack_b, stack_a);
-	ft_lstprint(stack_a, stack_b);
-} 
-//find mid point,  (mid value)
-//if less than midpoint, pbpbpb
-//go to last node and check if its less than midpoint.
-//If so rra and pb
-//if not, ra, ra, ra until theres a value less than 7 and pbpbpb
-//if we moved all numbers less than midpoint
-//get new midpoint of stack a
-//send them pbpbpb
-//if no number higher than midpoint
-//get new midpoint
-//until 2 numbers left, if already ordered dont do pb
-
+	push_to_a(stack_a, stack_b);
+}

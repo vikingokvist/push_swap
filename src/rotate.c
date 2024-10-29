@@ -35,7 +35,6 @@ void	ra(t_list **stack_a)
 		rotate(stack_a);
 		ft_printf("ra\n");
 	}
-		
 }
 
 void	rb(t_list **stack_b)
