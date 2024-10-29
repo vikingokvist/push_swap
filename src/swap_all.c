@@ -63,10 +63,50 @@ static void	quick_sort(t_list **stack_a, t_list **stack_b)
 	pa(stack_b, stack_a);
 }
 
+static void	pb_by_chunks(t_list **stack_a, t_list **stack_b, int s_len, int k)
+{
+	t_list	*last;
+	int		end_index;
+	int		start_index;
+	int		chunk_i;
+	int		chunk_j;
+
+	chunk_i = 0;
+	while (chunk_i < s_len / k)
+	{
+		start_index = s_len - (chunk_i + 1) * k;
+		end_index = s_len - chunk_i * k;
+		chunk_j = 0;
+		while (chunk_j < k)
+		{
+			last = ft_lstlast(stack_a);
+			if ((*stack_a)->index >= start_index && (*stack_a)->index < end_index)
+			{
+				pb(stack_a, stack_b);
+				chunk_j++;
+			}
+			else if (last->index >= start_index && last->index < end_index)
+			{
+				rra(stack_a);
+				pb(stack_a, stack_b);
+				chunk_j++;
+			}
+			else
+			{
+				rra(stack_a);
+			}			
+			
+		}
+		chunk_i++;
+	}
+	ft_lstprint(stack_a, stack_b);
+}
+
+
 void	swap_all(t_list **stack_a, t_list **stack_b)
 {
-	while (*stack_a)
-		pb(stack_a, stack_b);
+	pb_by_chunks(stack_a, stack_b, stack_len(stack_a), 10);
 	while (*stack_b)
 		quick_sort(stack_a, stack_b);
+	ft_lstprint(stack_a, stack_b);
 }
