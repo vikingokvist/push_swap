@@ -62,6 +62,7 @@ void	stack_free(t_list **stack);
 
 //utils
 int		ft_isdigit(int c);
+int		ft_sqrt(int nb);
 long	ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 void	ft_lstadd_back(t_list **lst, t_list *new);
