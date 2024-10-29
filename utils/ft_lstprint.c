@@ -21,6 +21,7 @@ void	ft_lstprint(t_list **stack_a, t_list **stack_b)
 	int		padding_a = 0;
 	int		padding_b = 0;
 
+	ft_printf("\n--------------------------------");
 	ft_printf("\n stack_a:\t stack_b:\n\n");
 	if (len_b > len_a)
 		padding_a = len_b - len_a;
@@ -58,5 +59,6 @@ void	ft_lstprint(t_list **stack_a, t_list **stack_b)
 		}
 	}
 	ft_printf("[Node = NULL]\t[Node = NULL]\n");
+	ft_printf("--------------------------------\n");
 
 }

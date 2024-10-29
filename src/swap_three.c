@@ -26,6 +26,8 @@ void	swap_three(t_list **stack_x)
 		current = current->next;
 		i++;
 	}
+	if (i < 3)
+		return ;
 	if (pos[0] > pos[1] && pos[1] < pos[2] && pos[0] < pos[2])
 		return (sa(stack_x));
 	else if (pos[0] > pos[1] && pos[1] < pos[2] && pos[0] > pos[2])

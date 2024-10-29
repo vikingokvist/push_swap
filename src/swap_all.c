@@ -26,7 +26,6 @@ static t_list	*get_midpoint(t_list **stack_a)
 		mid_point = mid_point->next;
 		i++;
 	}
-	ft_printf("Actual mid_point = %d\n", mid_point->index);
 	return (mid_point);
 }
 
@@ -48,9 +47,6 @@ static int	n_below_midpoint(t_list **stack_a, t_list *mid_point)
 	while (current != NULL)
 	{
 		if (current->index < mid_point->index)
-		{
-
-		}
 			return (1);
 		current = current->next;
 	}
@@ -65,28 +61,27 @@ void	swap_all(t_list **stack_a, t_list **stack_b)
 	while (stack_len(stack_a) > 3)
 	{
 		last = get_last(stack_a);
-		mid_point = get_midpoint(stack_a);//ft_printf("mid_point = %d\n", mid_point);//5 (mid node)
-		return ;
+		mid_point = get_midpoint(stack_a);
 		while (n_below_midpoint(stack_a, mid_point) == 1)
 		{
 			if ((*stack_a)->index < mid_point->index)
 			{
-				pb(stack_a, stack_b);
+				pb(stack_a, stack_b);	
+				if ((*stack_b) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
+					sb(stack_b);
 			}
-			if (last->index < mid_point->index)
+			else if (last->index < mid_point->index)
 			{
 				rra(stack_a);
 				pb(stack_a, stack_b);
+				if ((*stack_b) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
+					sb(stack_b);
 			}
 			else
-			{
 				ra(stack_a);
-			}
-			ft_lstprint(stack_a, stack_b);
 		}
 	}
-	if (check_order(stack_a) != 1)
-		swap_three(stack_a);
+	swap_three(stack_a);
 	while (*stack_b)
 		pa(stack_b, stack_a);
 	ft_lstprint(stack_a, stack_b);
