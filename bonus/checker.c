@@ -46,7 +46,7 @@ static void	ft_write(t_list **stack_a, t_list **stack_b, int check)
 		write(2, "Error\n", 6);
 	else if (ft_lst_isordered(stack_a) == 1 && *stack_b == NULL && check == 1)
 		write(1, "OK\n", 3);
-	else if (ft_lst_isordered(stack_a) != 1 && *stack_b != NULL && check == 1)
+	else
 		write(1, "KO\n", 3);
 	if (*stack_a)
 		ft_lstfree2(stack_a);
