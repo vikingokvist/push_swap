@@ -34,7 +34,7 @@ SRCS_UTILS = utils/ft_atoi.c utils/ft_check_valid_digits.c utils/ft_isdigit.c \
 SRC_BONUS = bonus/checker.c \
 	bonus/get_next_line.c bonus/get_next_line_utils.c \
 	bonus/swap_bonus.c bonus/rotate_bonus.c bonus/reverse_rotate_bonus.c \
-	bonus/push_bonus.c
+	bonus/push_bonus.c bonus/ft_lstfree2.c
 
 
 OBJS_SRC = $(SRCS_SRC:.c=.o)

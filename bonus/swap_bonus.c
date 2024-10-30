@@ -27,20 +27,20 @@ static void	swap2(t_list **stack_x)
 
 void	sa2(t_list **stack_a)
 {
-	if ((*stack_a)->next && stack_a && *stack_a)
+	if (stack_a && *stack_a && (*stack_a)->next)
 		swap2(stack_a);
 }
 
 void	sb2(t_list **stack_b)
 {
-	if ((*stack_b)->next && stack_b && *stack_b)
+	if (stack_b && *stack_b && (*stack_b)->next)
 		swap2(stack_b);
 }
 
 void	ss2(t_list **stack_a, t_list **stack_b)
 {
-	if ((*stack_a)->next && stack_a && *stack_a
-		&& (*stack_b)->next && stack_b && *stack_b)
+	if (stack_a && *stack_a && (*stack_a)->next
+		&& stack_b && *stack_b && (*stack_b)->next)
 	{
 		swap2(stack_a);
 		swap2(stack_b);

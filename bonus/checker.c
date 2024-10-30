@@ -42,16 +42,18 @@ static int	do_movements(t_list **stack_a, t_list **stack_b, char *line)
 
 static void	ft_write(t_list **stack_a, t_list **stack_b, int check)
 {
-	if (ft_lst_isordered(stack_a) == 1 && *stack_b == NULL && check == 1)
+	if (check == 0)
+		write(2, "Error\n", 6);
+	else if (ft_lst_isordered(stack_a) == 1 && *stack_b == NULL && check == 1)
 		write(1, "OK\n", 3);
 	else if (ft_lst_isordered(stack_a) != 1 && check == 1)
 		write(1, "KO\n", 3);
-	else if (check == 0)
-		write(2, "Error\n", 6);
 	if (*stack_a)
-		ft_lstfree(stack_a);
+		ft_lstfree2(stack_a);
 	if (*stack_b)
-		ft_lstfree(stack_b);
+		ft_lstfree2(stack_b);
+	free(stack_a);
+	free(stack_b);
 }
 
 int	main(int argc, char *argv[])
@@ -68,15 +70,15 @@ int	main(int argc, char *argv[])
 	stack_b = malloc(sizeof(t_list *));
 	if (!stack_b)
 		return (free(stack_a), 1);
-	*stack_a = NULL;
 	*stack_b = NULL;
+	*stack_a = NULL;
 	if (init_stack(stack_a, argc, argv) == 1)
 		return (ft_write(stack_a, stack_b, 0), 1);
 	line = get_next_line(0);
 	while (line != NULL)
 	{
-		if (do_movements(stack_a, stack_b, line))
-			return (free(line), ft_write(stack_a, stack_b, 1), 1);
+		if (do_movements(stack_a, stack_b, line) == 1)
+			return (free(line), ft_write(stack_a, stack_b, 0), 1);
 		free(line);
 		line = get_next_line(0);
 	}

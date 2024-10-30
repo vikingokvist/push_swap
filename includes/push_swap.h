@@ -77,5 +77,6 @@ void	rr2(t_list **stack_a, t_list **stack_b);
 void	rra2(t_list **stack_a);
 void	rrb2(t_list **stack_b);
 void	rrr2(t_list **stack_a, t_list **stack_b);
+void	ft_lstfree2(t_list **stack_x);
 
 #endif
