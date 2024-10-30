@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 12:23:13 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/09/30 12:23:16 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/30 14:47:06 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/30 14:47:10 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
+#include "../includes/push_swap.h"
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr_dec(long nb);
-int	ft_putnbr_hex(unsigned long long nb, int up_or_low);
-int	ft_putptr(void *ptr);
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while ((s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}

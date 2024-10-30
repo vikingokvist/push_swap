@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	if (ft_lst_isordered(stack_a) == 1)
-		return (ft_lstfree(stack_a), ft_lstfree(stack_b), 1);
+		return (ft_lstfree(stack_a), ft_lstfree(stack_b), 0);
 	push_swap(stack_a, stack_b);
 	return (ft_lstfree(stack_a), ft_lstfree(stack_b), 0);
 }

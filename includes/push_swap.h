@@ -12,7 +12,7 @@
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "ft_printf.h"
+# include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -47,6 +47,7 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 //utils
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_check_valid_digits(char **temp, int j);
 int		ft_isdigit(int c);
 int		ft_sqrt(int nb);
@@ -64,8 +65,17 @@ void	free_all(char **res, size_t i);
 char	**ft_split(char const *s, char c);
 size_t	array_len(char const *s, char c);
 
-
-//utils/(DELETE AFTERWARDS)
-void	ft_lstprint(t_list **stack_a, t_list **stack_b);
+//bonus
+void	sa2(t_list **stack_a);
+void	sb2(t_list **stack_b);
+void	ss2(t_list **stack_a, t_list **stack_b);
+void	pa2(t_list **stack_b, t_list **stack_a);
+void	pb2(t_list **stack_a, t_list **stack_b);
+void	ra2(t_list **stack_a);
+void	rb2(t_list **stack_b);
+void	rr2(t_list **stack_a, t_list **stack_b);
+void	rra2(t_list **stack_a);
+void	rrb2(t_list **stack_b);
+void	rrr2(t_list **stack_a, t_list **stack_b);
 
 #endif
