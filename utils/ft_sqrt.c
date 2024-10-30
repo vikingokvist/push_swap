@@ -14,14 +14,26 @@
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	int	left;
+	int	right;
+	int	mid;
+	int	result;
 
-	i = 1;
-	while (i <= nb)
+	if (nb <= 0)
+		return (0);
+	left = 1;
+	right = nb;
+	result = 0;
+	while (left <= right)
 	{
-		if ((i * i) == nb)
-			return (i);
-		i++;
+		mid = left + (right - left) / 2;
+		if (mid < nb / mid)
+		{
+			result = mid;
+			left = mid + 1;
+		}
+		else
+			right = mid - 1;
 	}
-	return (0);
+	return (result);
 }
