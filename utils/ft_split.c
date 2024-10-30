@@ -12,6 +12,54 @@
 
 #include "../includes/push_swap.h"
 
+void	free_all(char **res, size_t i)
+{
+	while (i > 0)
+	{
+		free(res[i - 1]);
+		i--;
+	}
+	free(res);
+}
+
+static size_t	word_len(char const *s, char c, size_t start)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[start + len] && s[start + len] != c)
+		len++;
+	return (len);
+}
+
+size_t	array_len(char const *s, char c)
+{
+	size_t	i;
+	size_t	len;
+	size_t	check;
+
+	check = 0;
+	len = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			if (check == 1)
+			{
+				len++;
+				check = 0;
+			}
+		}
+		else
+			check = 1;
+		i++;
+	}
+	if (check == 1)
+		len++;
+	return (len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;

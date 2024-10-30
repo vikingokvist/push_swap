@@ -29,13 +29,13 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	if (init_stack(stack_a, argc, argv) == 1)
 	{
-		stack_free(stack_a);
-		stack_free(stack_b);
-		ft_printf("Error\n");
+		ft_lstfree(stack_a);
+		ft_lstfree(stack_b);
+		write(2, "Error\n", 6);
 		return (1);
 	}
-	if (check_order(stack_a) == 1)
-		return (stack_free(stack_a), stack_free(stack_b), 1);
+	if (ft_lst_isordered(stack_a) == 1)
+		return (ft_lstfree(stack_a), ft_lstfree(stack_b), 1);
 	push_swap(stack_a, stack_b);
-	return (stack_free(stack_a), stack_free(stack_b), 0);
+	return (ft_lstfree(stack_a), ft_lstfree(stack_b), 0);
 }

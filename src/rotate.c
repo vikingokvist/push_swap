@@ -37,7 +37,7 @@ void	ra(t_list **stack_a)
 	if (*stack_a != NULL && (*stack_a)->next != NULL)
 	{
 		rotate(stack_a);
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 	}
 }
 
@@ -46,7 +46,7 @@ void	rb(t_list **stack_b)
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
 	{
 		rotate(stack_b);
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 	}
 }
 
@@ -57,6 +57,6 @@ void	rr(t_list **stack_a, t_list **stack_b)
 	{
 		rotate(stack_a);
 		rotate(stack_b);
-		ft_printf("rr\n");
+		write(1, "rr\n", 3);
 	}
 }

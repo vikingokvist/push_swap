@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lst_isordered.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:15:36 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/10/28 10:15:39 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/30 12:47:51 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/30 12:47:53 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_swap(t_list **stack_a, t_list **stack_b)
+int	ft_lst_isordered(t_list **stack_x)
 {
-	size_t	s_len;
+	t_list	*current;
+	int		last_value;
 
-	s_len = ft_lstlen(stack_a);
-	ft_lstinit_index(stack_a);
-	if (s_len == 2)
-		sa(stack_a);
-	else if (s_len == 3)
-		swap_three(stack_a);
-	else if (s_len == 5)
-		swap_five(stack_a, stack_b);
-	else
-		swap_all(stack_a, stack_b);
+	if (!stack_x || !(*stack_x))
+		return (1);
+	current = *stack_x;
+	last_value = current->value;
+	while (current != NULL)
+	{
+		if (last_value > current->value)
+			return (0);
+		last_value = current->value;
+		current = current->next;
+	}
+	return (1);
 }

@@ -30,7 +30,7 @@ void	sa(t_list **stack_a)
 	if ((*stack_a)->next && stack_a && *stack_a)
 	{
 		swap(stack_a);
-		ft_printf("sa\n");
+		write(1, "sa\n", 3);
 	}
 }
 
@@ -39,7 +39,7 @@ void	sb(t_list **stack_b)
 	if ((*stack_b)->next && stack_b && *stack_b)
 	{
 		swap(stack_b);
-		ft_printf("sb\n");
+		write(1, "sb\n", 3);
 	}
 }
 
@@ -50,6 +50,6 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	{
 		swap(stack_a);
 		swap(stack_b);
-		ft_printf("ss\n");
+		write(1, "ss\n", 3);
 	}
 }

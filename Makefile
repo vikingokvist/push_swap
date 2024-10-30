@@ -20,14 +20,15 @@ INCLUDE_DIR = includes
 FTPRINTF_DIR = ft_printf
 LIB_DIR = libs
 
-SRCS_SRC = src/checks.c src/frees.c src/init_stack.c src/lens.c src/main.c \
-	src/swap.c src/push.c src/rotate.c src/reverse_rotate.c \
-	src/push_swap.c src/swap_three.c src/swap_five.c src/swap_all.c
+SRCS_SRC = src/main.c src/init_stack.c \
+	src/push_swap.c src/swap_three.c src/swap_five.c src/swap_all.c \
+	src/reverse_rotate.c src/rotate.c src/swap.c src/push.c
 
-SRCS_UTILS = utils/ft_atoi.c utils/ft_isdigit.c utils/ft_lstadd_back.c utils/ft_split.c \
-	utils/ft_lstnew.c utils/ft_lstinit_index.c utils/ft_lstlast.c utils/ft_lstmax_index.c \
-	utils/ft_sqrt.c \
-	utils/ft_lstprint.c
+SRCS_UTILS = utils/ft_atoi.c utils/ft_check_valid_digits.c utils/ft_isdigit.c \
+	utils/ft_lst_isordered.c utils/ft_lstadd_back.c utils/ft_lstcheck_dupe.c \
+	utils/ft_lstfree.c utils/ft_lstinit_index.c utils/ft_lstlast.c utils/ft_lstlen.c \
+	utils/ft_lstmax_index.c utils/ft_lstnew.c utils/ft_split.c utils/ft_sqrt.c \
+	utils/ft_lstprint.c #delete
 
 OBJS_SRC = $(SRCS_SRC:.c=.o)
 OBJS_UTILS = $(SRCS_UTILS:.c=.o)

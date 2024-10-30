@@ -75,7 +75,7 @@ static void	pb_by_chunks(t_list **stack_a, t_list **stack_b, int s_len)
 		if ((*stack_a)->index <= i)
 		{
 			pb(stack_a, stack_b);
-			if (stack_len(stack_b) > 1)
+			if (ft_lstlen(stack_b) > 1)
 				rb(stack_b);
 			i++;
 		}
@@ -91,7 +91,7 @@ static void	pb_by_chunks(t_list **stack_a, t_list **stack_b, int s_len)
 
 void	swap_all(t_list **stack_a, t_list **stack_b)
 {
-	pb_by_chunks(stack_a, stack_b, stack_len(stack_a));
+	pb_by_chunks(stack_a, stack_b, ft_lstlen(stack_a));
 	while (*stack_b)
 		quick_sort(stack_a, stack_b);
 }

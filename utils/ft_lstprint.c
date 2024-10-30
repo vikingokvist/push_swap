@@ -16,8 +16,8 @@ void	ft_lstprint(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*current_a = *stack_a;
 	t_list	*current_b = *stack_b;
-	int		len_a = stack_len(stack_a);
-	int		len_b = stack_len(stack_b);
+	int		len_a = ft_lstlen(stack_a);
+	int		len_b = ft_lstlen(stack_b);
 	int		padding_a = 0;
 	int		padding_b = 0;
 

@@ -28,7 +28,7 @@ int	init_stack(t_list **stack_a, int argc, char **argv)
 		j = 0;
 		while (temp[j])
 		{
-			if (check_digit(temp, j) == 1)
+			if (ft_check_valid_digits(temp, j) == 1)
 				return (free_all(temp, array_len(argv[i], ' ')), 1);
 			new = ft_lstnew(ft_atoi(temp[j++]));
 			ft_lstadd_back(stack_a, new);
@@ -36,7 +36,7 @@ int	init_stack(t_list **stack_a, int argc, char **argv)
 		free_all(temp, array_len(argv[i], ' '));
 		i++;
 	}
-	if (check_dupe(stack_a) == 1)
+	if (ft_lstcheck_dupe(stack_a) == 1)
 		return (1);
 	return (0);
 }

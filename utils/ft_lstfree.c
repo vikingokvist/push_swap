@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctommasi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:15:36 by ctommasi          #+#    #+#             */
-/*   Updated: 2024/10/28 10:15:39 by ctommasi         ###   ########.fr       */
+/*   Created: 2024/10/30 12:54:30 by ctommasi          #+#    #+#             */
+/*   Updated: 2024/10/30 12:54:31 by ctommasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_swap(t_list **stack_a, t_list **stack_b)
+void	ft_lstfree(t_list **stack_x)
 {
-	size_t	s_len;
+	t_list	*temp;
 
-	s_len = ft_lstlen(stack_a);
-	ft_lstinit_index(stack_a);
-	if (s_len == 2)
-		sa(stack_a);
-	else if (s_len == 3)
-		swap_three(stack_a);
-	else if (s_len == 5)
-		swap_five(stack_a, stack_b);
-	else
-		swap_all(stack_a, stack_b);
+	while (*stack_x)
+	{
+		temp = (*stack_x)->next;
+		free(*stack_x);
+		*stack_x = temp;
+	}
+	free(stack_x);
 }

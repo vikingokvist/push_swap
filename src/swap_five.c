@@ -33,8 +33,8 @@ void	swap_five(t_list **stack_a, t_list **stack_b)
 {
 	size_t	s_len;
 
-	s_len = stack_len(stack_a);
-	while (stack_len(stack_a) > 3)
+	s_len = ft_lstlen(stack_a);
+	while (ft_lstlen(stack_a) > 3)
 	{
 		if ((*stack_a)->index != 0 && (*stack_a)->index != 1)
 		{
@@ -47,9 +47,9 @@ void	swap_five(t_list **stack_a, t_list **stack_b)
 		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
 			pb(stack_a, stack_b);
 	}
-	if (check_order(stack_a) == 0)
+	if (ft_lst_isordered(stack_a) == 0)
 		swap_three(stack_a);
-	if (check_order(stack_b) == 1)
+	if (ft_lst_isordered(stack_b) == 1)
 		sb(stack_b);
 	pa(stack_b, stack_a);
 	pa(stack_b, stack_a);
