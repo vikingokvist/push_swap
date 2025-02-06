@@ -40,10 +40,10 @@ The goal is to strategically use these moves to sort the numbers.
 - The program determines if the list is already sorted.
 - Depending on the size, it uses hardcoded solutions for 3 or 5 numbers.
 
-##### K-Sort Preparation:
+##### Bucket Sort Preparation:
 - For larger sets, numbers are pushed to stack b in a K-order (largest at extremes, smallest in the middle).
 
-##### Quick Sort:
+##### Selection Sort:
 - The program sorts numbers in stack b and pushes them back to stack a, leveraging the K-order to minimize moves (e.g., at most rrb and pa per step).
 
 
