@@ -42,10 +42,14 @@ The goal is to strategically use these moves to sort the numbers.
 
 ##### Bucket Sort Preparation:
 - For larger sets, numbers are pushed to stack b in a K-order (largest at extremes, smallest in the middle).
-
+- Best Case Complexity: O(n√n) 
+- Worst Case Complexity: O(n^2)
+- Time complexity: O(1)
 ##### Selection Sort:
 - The program sorts numbers in stack b and pushes them back to stack a, leveraging the K-order to minimize moves (e.g., at most rrb and pa per step).
-
+- Best Case Complexity: O(n) 
+- Worst Case Complexity: O(n^2)
+- Time complexity: O(1)
 
 ![push_swap](https://github.com/user-attachments/assets/5b6fd246-5ba0-4f67-9594-c4399f6ebe50)
 
