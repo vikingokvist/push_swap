@@ -36,7 +36,7 @@ static void	moves(t_list **stack_b, int count, int r_count)
 	}
 }
 
-static void	quick_sort(t_list **stack_a, t_list **stack_b)
+static void	selection_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 	t_list	*tail;
@@ -63,7 +63,7 @@ static void	quick_sort(t_list **stack_a, t_list **stack_b)
 	pa(stack_b, stack_a);
 }
 
-static void	pb_by_chunks(t_list **stack_a, t_list **stack_b, int s_len)
+static void	bucket_sort(t_list **stack_a, t_list **stack_b, int s_len)
 {
 	int	i;
 	int	range;
@@ -91,7 +91,7 @@ static void	pb_by_chunks(t_list **stack_a, t_list **stack_b, int s_len)
 
 void	swap_all(t_list **stack_a, t_list **stack_b)
 {
-	pb_by_chunks(stack_a, stack_b, ft_lstlen(stack_a));
+	bucket_sort(stack_a, stack_b, ft_lstlen(stack_a));
 	while (*stack_b)
-		quick_sort(stack_a, stack_b);
+		selection_sort(stack_a, stack_b);
 }
